@@ -27,16 +27,14 @@ except ImportError:
     Crypto = AES = None
     import pyaes  # https://github.com/ricmoo/pyaes
 
+from pytuya.const import __version__
 
-version_tuple = (7, 0, 6)
-version = version_string = __version__ = '%d.%d.%d' % version_tuple
-__author__ = 'clach04'
 
 log = logging.getLogger(__name__)
 #logging.basicConfig()  # TODO include function name/line numbers in log
 #log.setLevel(level=logging.DEBUG)  # Debug hack!
 
-log.info('%s version %s', __name__, version)
+log.info('%s version %s', __name__, __version__)
 log.info('Python %s on %s', sys.version, sys.platform)
 if Crypto is None:
     log.info('Using pyaes version %r', pyaes.VERSION)
